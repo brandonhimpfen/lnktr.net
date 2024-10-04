@@ -21,7 +21,7 @@ body {
 .tree .name {
   font-weight: 600;
   font-size: 28px;
-  margin: 0.75em auto 0.25em;
+  margin: 0.5em auto 0.25em;
   color: #fff;
   color: rgba(255, 255, 255, 0.85);
 }
