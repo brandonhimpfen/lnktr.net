@@ -17,6 +17,8 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   margin: 2em;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
 }
 .tree .links a {
   margin: 0.75em auto;
@@ -24,8 +26,14 @@ body {
 .tree .footer {
   margin: 2rem;
 }
+.tree .name {
+  font-weight: 600;
+  font-size: 28px;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
+}
 .tree .profile-pic {
-  width: 110px;
+  width: 150px;
   border-radius: 50%;
   text-align: center;
 }
