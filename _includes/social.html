@@ -1,0 +1,5 @@
+<ul class="social-icons">
+  {% for social in include.socials %}
+    <li><a href="{{ social.url }}" target="_blank"><i class="fab fa-{{ social.icon }}"></i></a></li>
+  {% endfor %}
+</ul>
