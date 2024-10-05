@@ -28,13 +28,13 @@ body {
 .tree .username {
   text-transform: uppercase;
   font-weight: 600;
-  margin: 0.25em auto 1em;
+  margin: 0.25em auto;
   color: #fff;
   color: rgba(255, 255, 255, 0.85);
 }
 .tree .comments {
   font-weight: 400;
-  margin: 1em 2em 1.5em;
+  margin: 0.25em auto 1em;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
 }
