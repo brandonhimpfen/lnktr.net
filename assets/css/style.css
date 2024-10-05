@@ -21,7 +21,7 @@ body {
 .tree .name {
   font-weight: 600;
   font-size: 28px;
-  margin: 0.5em auto 0.25em;
+  margin: 0.5em auto 0;
   color: #fff;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -68,11 +68,11 @@ a.btn {
 }
 .social-icons a, .social-icons a:link, .social-icons a:visited, .social-icons a:active {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 32px;
+  font-size: 28px;
   text-decoration: none;
 }
 .social-icons a:hover {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 32px;
+  font-size: 28px;
   text-decoration: none;
 }
