@@ -19,21 +19,27 @@
   </head>
   <body>
   {{ content }}
-<!-- External Links Open in New Window -->
-<script>
-// vanilla JavaScript
-var links = document.links;
+  <script type="text/javascript">
+  // Add Ref to External Links
+  document.addEventListener('DOMContentLoaded', function() {
+      var refValue = 'lnktr.net';
+      var externalLinks = Array.from(document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])'));
 
-for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-  if (links[i].hostname != window.location.hostname) {
-    links[i].target = '_blank';
-  } 
-}
+      externalLinks.forEach(function(link) {
+          var originalHref = link.getAttribute('href');
+          var separator = originalHref.includes('?') ? '&' : '?';
+          var modifiedHref = originalHref + separator + 'ref=' + encodeURIComponent(refValue);
+          link.setAttribute('href', modifiedHref);
+      });
+  });
+  // Open External Links in New Window
+  var links = document.links;
 
-// or in jQuery
-$(document.links).filter(function() {
-  return this.hostname != window.location.hostname;
-}).attr('target', '_blank');
-</script>    
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+  </script> 
   </body>
 </html>
