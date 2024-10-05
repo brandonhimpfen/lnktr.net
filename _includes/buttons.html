@@ -1,0 +1,5 @@
+<div class="links">
+  {% for button in include.buttons %}
+    <a href="{{ button.url }}" class="btn btn-{{ button.style }} btn-lg btn-block">{{ button.label }}</a>
+  {% endfor %}
+</div>
