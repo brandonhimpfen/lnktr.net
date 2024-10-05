@@ -32,7 +32,22 @@ body {
   color: #fff;
   color: rgba(255, 255, 255, 0.85);
 }
+.tree .comments {
+  font-weight: 400;
+  margin: 1em 2em 1.5em;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
+}
 .tree .links a {
+  margin: 0.75em auto;
+}
+.tree .number {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+  text-align: center;
   margin: 0.75em auto;
 }
 .tree .footer {
@@ -40,4 +55,24 @@ body {
 }
 a.btn {
   background-color: #fff;
+}
+/* Style for the social icons */
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.social-icons a, .social-icons a:link, .social-icons a:visited, .social-icons a:active {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 36px;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 36px;
+  text-decoration: none;
 }
