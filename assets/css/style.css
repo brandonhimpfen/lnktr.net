@@ -28,13 +28,13 @@ body {
 .tree .username {
   text-transform: uppercase;
   font-weight: 600;
-  margin: 0.25em auto;
+  margin: 0 auto 0.5em;
   color: #fff;
   color: rgba(255, 255, 255, 0.85);
 }
 .tree .comments {
   font-weight: 400;
-  margin: 0.25em auto 1em;
+  margin: 0.25em auto 1.25em;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -68,11 +68,11 @@ a.btn {
 }
 .social-icons a, .social-icons a:link, .social-icons a:visited, .social-icons a:active {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 36px;
+  font-size: 32px;
   text-decoration: none;
 }
 .social-icons a:hover {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 36px;
+  font-size: 32px;
   text-decoration: none;
 }
