@@ -20,7 +20,7 @@ socials:
     icon: "twitter"
   - url: "https://www.instagram.com/solotravel_blog/"
     icon: "instagram"
-  - url: "https://www.facebook.com/thesolotravelsociety/
+  - url: "https://www.facebook.com/thesolotravelsociety/"
     icon: "facebook"
 ---	
 
