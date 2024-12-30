@@ -6,14 +6,11 @@ profile-pic: https://pbs.twimg.com/profile_images/695327683325075457/f-_qn2us_40
 intro: "Use the following links to find our work:"
 buttons:
   - label: "Official Website"
-    url: "https://www.solotravelsociety.com/"
+    url: "https://www.solotraveler.org/"
     style: "outline-primary"
-  - label: "Solo Travel Tutorials"
-    url: "https://www.himpfen.com/tag/solo-travel/"
+  - label: "No or Low Single Supplement Trips"
+    url: "https://trips.solotraveler.org/"
     style: "outline-primary"    
-  - label: "Digital Nomads Weekly Newsletter"
-    url: "https://www.digitalnomadsweekly.com/"
-    style: "outline-dark"
 intro_social: "Connect with us at:"
 socials:
   - url: "https://x.com/SoloTravellerCA"
