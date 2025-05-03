@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-
-    {% if site.fathom_analytics %}
-<!-- Fathom Analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="{{ site.fathom_analytics }}" defer></script>
-<!-- / Fathom -->
-    {% endif %}
     
     <meta charset="UTF-8">
 
@@ -17,6 +11,15 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' }}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFFQNW3HTS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-QFFQNW3HTS');
+    </script>
   </head>
   <body>
   {{ content }}
