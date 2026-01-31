@@ -41,6 +41,12 @@ body_class: page-directory
   {% endfor %}
 </div>
 
+<div class="content flex">
+<div>
+  <a class="btn btn-primary" href="/">⬅ Go Back Home</a>
+</div>
+</div>
+
 <script>
 (function () {
   var input = document.getElementById('directorySearch');
