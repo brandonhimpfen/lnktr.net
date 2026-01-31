@@ -1,6 +1,10 @@
 <div class="intro_social">{{ page.intro_social }}</div>
 <ul class="social-icons">
   {% for social in include.socials %}
-    <li><a href="{{ social.url }}" target="_blank"><i class="fab fa-{{ social.icon }}"></i></a></li>
+    <li>
+      <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ page.title }} on {{ social.icon | capitalize }}">
+        <i class="fab fa-{{ social.icon }}" aria-hidden="true"></i>
+      </a>
+    </li>
   {% endfor %}
 </ul>
