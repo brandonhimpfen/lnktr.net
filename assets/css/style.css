@@ -65,18 +65,26 @@ body {
 }
 
 .social-icons {
-  margin: 1em auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .social-icons a, .social-icons a:link, .social-icons a:visited, .social-icons a:active {
   color: rgba(255, 255, 255, 0.7);
   font-size: 28px;
   text-decoration: none;
-  margin-right: 10px;
 }
 
 .social-icons a:hover {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 28px;
+  text-decoration: none;
 }
 
 .footer {
