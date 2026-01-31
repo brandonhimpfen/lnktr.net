@@ -115,6 +115,7 @@ body {
   margin: 0 0 1.25rem;
 }
 .directory-grid {
+  gap: 18px;
   margin-bottom: 1.5rem;
 }
 .directory-card {
@@ -168,9 +169,11 @@ body {
 body.page-directory {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(1000px 600px at 50% -20%, rgba(64, 120, 255, 0.25), rgba(0, 0, 0, 0) 55%),
-              radial-gradient(900px 700px at 90% 0%, rgba(0, 200, 255, 0.18), rgba(0, 0, 0, 0) 50%),
-              linear-gradient(180deg, #050608 0%, #0b0f1a 60%, #050608 100%);
+  background:
+    radial-gradient(1000px 600px at 50% -20%, rgba(64, 120, 255, 0.25), rgba(0, 0, 0, 0) 55%),
+    radial-gradient(900px 700px at 90% 0%, rgba(0, 200, 255, 0.18), rgba(0, 0, 0, 0) 50%),
+    linear-gradient(180deg, #050608 0%, #0b0f1a 60%, #050608 100%);
+  background-attachment: fixed;
 }
 body.page-directory .page-wrap {
   padding: 3rem 0;
