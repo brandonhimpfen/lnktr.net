@@ -3,6 +3,7 @@ layout: page
 title: Directory
 description: Browse profiles and projects.
 permalink: /directory/
+body_class: page-directory
 ---
 
 <div class="directory-controls">
