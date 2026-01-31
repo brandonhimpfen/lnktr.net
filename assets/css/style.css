@@ -7,215 +7,234 @@ body {
   background-style:flat;
   height:100%;
 }
+
 .tree {
   margin: 0 auto;
   text-align: center;
   width: 100%;
   max-width: 700px;
 }
+
 .tree .profile-pic {
   width: 150px;
   border-radius: 50%;
   text-align: center;
 }
+
 .tree .name {
   font-weight: 600;
   font-size: 28px;
-  margin: 0.5em auto 0;
+  margin: 0.5em auto 0.25em;
   color: #fff;
-  color: rgba(255, 255, 255, 0.85);
 }
-.tree .username {
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 0 auto 0.5em;
-  color: #fff;
-  color: rgba(255, 255, 255, 0.85);
-}
-.tree .intro {
+
+.tree .location {
   font-weight: 400;
   margin: 0.25em auto 1.25em;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .tree .intro_social {
   font-weight: 400;
   margin: 0.5em auto 0.75em;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .tree .links a {
   margin: 0.75em auto;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
 }
-.tree .number {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.2);
-  color: #000;
-  text-align: center;
-  margin: 0.75em auto;
-}
-.tree .footer {
-  margin: 2rem;
-}
-/* Buttons inside profile pages */
+
+/* IMPORTANT:
+   Keep white button style ONLY for profile link buttons,
+   so it doesn't break Bootstrap buttons elsewhere. */
 .tree .links a.btn {
   background-color: #fff;
   color: #000;
 }
 
-/* Style for the social icons */
+.tree .links a.btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tree .socials {
+  margin: 1.5em auto;
+}
+
 .social-icons {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 1em auto;
 }
-.social-icons li {
-  display: inline-block;
-  margin-right: 10px;
-}
+
 .social-icons a, .social-icons a:link, .social-icons a:visited, .social-icons a:active {
   color: rgba(255, 255, 255, 0.7);
   font-size: 28px;
   text-decoration: none;
+  margin-right: 10px;
 }
+
 .social-icons a:hover {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 28px;
-  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.footer {
+  margin-top: 2em;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
 }
 
 /* ------------------------------------------------------------
-   Pages
+   Page layout (used by /directory/ and other pages)
 ------------------------------------------------------------ */
 .page-wrap {
   min-height: 100vh;
   padding: 2.5rem 0;
 }
+
 .page-container {
   max-width: 960px;
 }
+
 .page-title {
   margin: 0 0 0.25rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
 }
+
 .page-description {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.75rem;
   opacity: 0.85;
 }
+
 .page-footer {
-  margin-top: 2.5rem;
-  opacity: 0.7;
+  margin-top: 2rem;
+}
+
+.page-footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.75;
 }
 
 /* ------------------------------------------------------------
-   Directory
+   Directory (cards + search)
 ------------------------------------------------------------ */
 .directory-controls {
   margin: 0 0 1.25rem;
 }
+
 .directory-grid {
   margin-bottom: 1.5rem;
 }
+
+/* fixes “cards touching” vertically */
+.directory-item {
+  margin-bottom: 18px;
+}
+
 .directory-card {
   display: block;
   height: 100%;
   text-decoration: none;
 }
+
 .directory-card:hover {
   text-decoration: none;
 }
+
 .directory-card-inner {
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+
+  /* Light cards (readable on light background) */
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+
+  color: #0f172a;
   height: 100%;
 }
+
 .directory-avatar {
   width: 64px;
   height: 64px;
   border-radius: 999px;
   object-fit: cover;
   flex: 0 0 64px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(15, 23, 42, 0.10);
+  background: #ffffff;
 }
+
 .directory-avatar--placeholder {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.06);
 }
+
 .directory-title {
-  font-weight: 700;
+  font-weight: 750;
   margin: 0;
+  color: #0b1220;
 }
+
 .directory-handle {
   font-size: 0.85rem;
-  opacity: 0.8;
   margin: 0.15rem 0 0.5rem;
+  color: rgba(15, 23, 42, 0.60);
 }
+
 .directory-intro {
   font-size: 0.9rem;
-  opacity: 0.85;
   margin: 0;
+  color: rgba(15, 23, 42, 0.72);
 }
 
-
 /* ------------------------------------------------------------
-   Directory page background
+   Directory page background (LIGHT theme, same palette as homepage)
+   Uses #454db9 (left) -> #05a4c0 (right)
 ------------------------------------------------------------ */
-body.page-directory{
+body.page-directory {
   margin: 0;
   min-height: 100vh;
 
+  /* Light base + colored atmosphere */
   background:
-    radial-gradient(900px 600px at 18% 10%, rgba(69, 77, 185, 0.32), rgba(69, 77, 185, 0) 60%),
-    radial-gradient(900px 600px at 82% 10%, rgba(5, 164, 192, 0.26), rgba(5, 164, 192, 0) 60%),
+    radial-gradient(900px 600px at 18% 10%, rgba(69, 77, 185, 0.52), rgba(69, 77, 185, 0) 60%),
+    radial-gradient(900px 600px at 82% 10%, rgba(5, 164, 192, 0.48), rgba(5, 164, 192, 0) 60%),
     linear-gradient(90deg, rgba(69, 77, 185, 0.18) 0%, rgba(5, 164, 192, 0.16) 100%),
     linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
 
   background-attachment: fixed;
+  color: #0f172a;
 }
+
+/* Remove any wrapper background that could “wash out” the gradient */
+body.page-directory .page-wrap,
+body.page-directory .page-container,
+body.page-directory .page-content,
+body.page-directory main,
+body.page-directory .wrapper,
+body.page-directory .site-wrap,
+body.page-directory .main {
+  background: transparent !important;
+}
+
+/* Spacing + readable headings on the light theme */
 body.page-directory .page-wrap {
   padding: 3rem 0;
 }
+
 body.page-directory .page-title {
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(15, 23, 42, 0.92);
 }
+
 body.page-directory .page-description {
-  color: rgba(255, 255, 255, 0.60);
-}
-/* Directory cards: force readable text on light page */
-body.page-directory .directory-grid .directory-card,
-body.page-directory .directory-grid .card,
-body.page-directory .directory-grid a.directory-card{
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
-  color: #0f172a; /* dark readable text */
+  color: rgba(15, 23, 42, 0.65);
 }
 
-/* Card title */
-body.page-directory .directory-grid .directory-card h3,
-body.page-directory .directory-grid .card h3,
-body.page-directory .directory-grid .directory-card .title,
-body.page-directory .directory-grid .card .title{
-  color: #0b1220;
-}
-
-/* Card meta/handle + description */
-body.page-directory .directory-grid .directory-card p,
-body.page-directory .directory-grid .card p,
-body.page-directory .directory-grid .directory-card .meta,
-body.page-directory .directory-grid .card .meta,
-body.page-directory .directory-grid .directory-card small,
-body.page-directory .directory-grid .card small{
-  color: rgba(15, 23, 42, 0.72);
-}
-
-/* Links inside cards */
-body.page-directory .directory-grid a{
-  color: inherit;
-  text-decoration: none;
+body.page-directory .page-footer p {
+  color: rgba(15, 23, 42, 0.60);
 }
