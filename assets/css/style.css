@@ -35,6 +35,21 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.tree .username {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 auto 0.5em;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tree .intro {
+  font-weight: 400;
+  margin: 0.25em auto 1.25em;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .tree .intro_social {
   font-weight: 400;
   margin: 0.5em auto 0.75em;
