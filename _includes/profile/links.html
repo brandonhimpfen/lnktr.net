@@ -1,0 +1,11 @@
+{% if include.has_donations %}
+  {% include profile/donations.html donations=page.donations %}
+{% endif %}
+
+{% for link in include.links %}
+  {% assign label = link.label | default: link.title %}
+  <a href="{{ link.url }}" class="lnktr-link-card">
+    <span class="lnktr-link-label">{{ label }}</span>
+    <i class="fas fa-arrow-up-right-from-square lnktr-link-arrow" aria-hidden="true"></i>
+  </a>
+{% endfor %}

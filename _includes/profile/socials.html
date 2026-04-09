@@ -1,0 +1,25 @@
+<div class="lnktr-social-row" aria-label="Social media links">
+  {% for social in include.socials %}
+    {% assign icon_name = social.icon %}
+    {% if icon_name == 'twitter' %}
+      {% assign icon_name = 'x-twitter' %}
+    {% endif %}
+    <a href="{{ social.url }}" class="lnktr-social-icon" aria-label="{{ social.label | default: social.icon }}">
+      {% if icon_name == 'linkedin' %}
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+      {% elsif icon_name == 'youtube' %}
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+      {% elsif icon_name == 'instagram' %}
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      {% elsif icon_name == 'facebook' %}
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      {% elsif icon_name == 'github' %}
+        <i class="fab fa-github" aria-hidden="true"></i>
+      {% elsif icon_name == 'x-twitter' or icon_name == 'x' %}
+        <i class="fab fa-x-twitter" aria-hidden="true"></i>
+      {% else %}
+        <i class="fab fa-{{ icon_name }}" aria-hidden="true"></i>
+      {% endif %}
+    </a>
+  {% endfor %}
+</div>

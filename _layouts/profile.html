@@ -1,0 +1,72 @@
+---
+layout: default
+---
+{% assign profile_bg = page.bg_img | default: page.bg-img %}
+{% assign profile_pic = page.profile_pic | default: page.profile-pic %}
+{% assign profile_links = page.links | default: page.buttons %}
+{% assign social_items = page.socials.items | default: page.socials %}
+{% assign has_socials = false %}
+{% if social_items and social_items.size > 0 %}
+  {% if page.socials.enabled != false %}
+    {% assign has_socials = true %}
+  {% endif %}
+{% endif %}
+{% assign donation_methods = page.donations.methods %}
+{% assign donation_crypto = page.donations.crypto %}
+{% assign has_donations = false %}
+{% if page.donations and page.donations.enabled != false %}
+  {% if donation_methods and donation_methods.size > 0 %}
+    {% assign has_donations = true %}
+  {% elsif donation_crypto and donation_crypto.size > 0 %}
+    {% assign has_donations = true %}
+  {% endif %}
+{% endif %}
+{% assign has_shop = false %}
+{% if page.shop and page.shop.enabled != false and page.shop.collections and page.shop.collections.size > 0 %}
+  {% assign has_shop = true %}
+{% endif %}
+
+<div class="lnktr-profile-shell"{% if profile_bg %} style="background-image: url('{{ profile_bg | relative_url }}');"{% endif %}>
+  <section class="lnktr-profile-phone">
+    <div class="lnktr-profile-screen">
+      <div class="lnktr-top-actions">
+        {% if page.ui.share_enabled != false %}
+          {% include profile/share-button.html %}
+        {% endif %}
+      </div>
+
+      {% include profile/header.html profile_pic=profile_pic %}
+
+      {% if has_socials %}
+        {% include profile/socials.html socials=social_items %}
+      {% endif %}
+
+      {% include profile/toggle.html has_shop=has_shop %}
+
+      {% if has_shop and page.shop.intro %}
+        <div class="lnktr-affiliate-note d-none" data-shop-note>{{ page.shop.intro }}</div>
+      {% endif %}
+
+      <div class="lnktr-content-card">
+        <div id="linksView">
+          {% include profile/links.html links=profile_links has_donations=has_donations %}
+        </div>
+
+        {% if has_shop %}
+          <div id="shopCollectionsView" class="d-none">
+            {% include profile/shop-collections.html collections=page.shop.collections %}
+          </div>
+
+          <div id="productsView" class="d-none">
+            {% include profile/shop-products.html %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="lnktr-profile-footer">
+        <p><a class="btn btn-light btn-sm" href="/directory/">Browse Directory</a></p>
+        <p>Copyright &copy; {{ site.title }} - All Rights Reserved.</p>
+      </div>
+    </div>
+  </section>
+</div>

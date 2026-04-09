@@ -1,0 +1,20 @@
+<div class="lnktr-section-head">
+  <div>
+    <div class="lnktr-section-title">Shop Collections</div>
+    <div class="lnktr-section-subtitle">Browse featured collections</div>
+  </div>
+</div>
+
+<div id="collectionsGrid" class="row">
+  {% for collection in include.collections %}
+    <div class="col-12 mb-3">
+      <button class="lnktr-collection-card text-left w-100 border-0 p-0" type="button" data-collection='{{ collection | jsonify | escape }}'>
+        <img src="{{ collection.image }}" alt="{{ collection.name }}" class="lnktr-collection-image" loading="lazy" />
+        <span class="lnktr-card-info">
+          <span class="lnktr-card-title">{{ collection.name }}</span>
+          <span class="lnktr-card-meta">{{ collection.products | size }} products</span>
+        </span>
+      </button>
+    </div>
+  {% endfor %}
+</div>

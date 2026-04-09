@@ -1,0 +1,51 @@
+<button type="button" class="lnktr-link-card lnktr-support-card w-100 border-0 text-left" id="supportToggle" aria-expanded="false">
+  <span>
+    <span class="lnktr-support-title">{{ include.donations.title | default: 'Support My Work' }}</span>
+    <span class="lnktr-support-text">{{ include.donations.intro | default: 'Support the work through one or more of the available options.' }}</span>
+  </span>
+  <span class="lnktr-support-right">
+    <span class="lnktr-support-icon">
+      <i class="fas fa-heart" aria-hidden="true"></i>
+    </span>
+    <i class="fas fa-chevron-down lnktr-support-chevron" aria-hidden="true"></i>
+  </span>
+</button>
+
+<div class="lnktr-support-panel-wrap" id="supportPanelWrap">
+  <div class="lnktr-support-panel">
+    {% if include.donations.methods and include.donations.methods.size > 0 %}
+      <div class="lnktr-support-actions">
+        {% for method in include.donations.methods %}
+          {% assign method_icon = method.icon | default: 'heart' %}
+          <a href="{{ method.url }}" class="lnktr-support-btn">
+            {% if method_icon == 'github' %}
+              <i class="fab fa-github" aria-hidden="true"></i>
+            {% elsif method_icon == 'cup-hot' or method_icon == 'coffee' %}
+              <i class="fas fa-mug-hot" aria-hidden="true"></i>
+            {% elsif method_icon == 'paypal' %}
+              <i class="fab fa-paypal" aria-hidden="true"></i>
+            {% else %}
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            {% endif %}
+            <span>{{ method.label }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if include.donations.crypto and include.donations.crypto.size > 0 %}
+      <div class="lnktr-crypto-title">Crypto Addresses</div>
+      <div class="lnktr-crypto-list">
+        {% for coin in include.donations.crypto %}
+          <div class="lnktr-crypto-item">
+            <div>
+              <div class="lnktr-crypto-label">{{ coin.label }}</div>
+              <div class="lnktr-crypto-address">{{ coin.address }}</div>
+            </div>
+            <button class="lnktr-copy-btn" type="button" data-copy-value="{{ coin.address }}">Copy</button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

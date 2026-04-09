@@ -1,0 +1,20 @@
+<div class="lnktr-profile-wrap text-center">
+  {% if include.profile_pic %}
+    <img src="{{ include.profile_pic }}" class="lnktr-avatar" alt="{{ page.title }}" loading="lazy" />
+  {% endif %}
+
+  <h1 class="lnktr-profile-name">
+    {{ page.title }}
+    {% if page.ui.verified %}
+      <i class="fas fa-check-circle lnktr-verification" aria-hidden="true"></i>
+    {% endif %}
+  </h1>
+
+  {% if page.subtitle %}
+    <div class="lnktr-profile-subtitle">{{ page.subtitle }}</div>
+  {% endif %}
+
+  {% if page.intro %}
+    <div class="lnktr-profile-intro">{{ page.intro }}</div>
+  {% endif %}
+</div>

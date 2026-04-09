@@ -9,6 +9,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% if page.layout == 'profile' %}
+    <link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% endif %}
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css'>
     {% if site.google_analytics %}
     <!-- Google tag (gtag.js) -->
@@ -22,7 +25,7 @@
     </script>
     {% endif %}
   </head>
-  <body class="{{ page.body_class | default: '' }}">
+  <body class="{{ page.body_class | default: '' }}{% if page.layout == 'profile' %} profile-layout{% endif %}">
   {{ content }}
   <script type="text/javascript">
   // Add Ref to External Links
@@ -47,5 +50,8 @@
     } 
   }
   </script> 
+  {% if page.layout == 'profile' %}
+  <script src="{{ '/assets/js/profile.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  {% endif %}
   </body>
 </html>

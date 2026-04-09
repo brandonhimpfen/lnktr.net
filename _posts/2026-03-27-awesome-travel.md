@@ -1,28 +1,34 @@
----	
+---
 title: Awesome Travel
-layout: post
-bg-img: /assets/images/wallpaper-04.png
-profile-pic: https://avatars.githubusercontent.com/u/154399305?s=200&v=4
-intro: "Use the following links to find our work:"
-buttons:
-  - label: "Official Website"
-    url: "https://www.himpfen.com/awesome-travel/"
-    style: "outline-secondary"
-  - label: "GitHub"
-    url: "https://github.com/brandonhimpfen/awesome-travel"
-    style: "outline-secondary"    
-intro_social: "Connect with us at:"
+layout: profile
+bg_img: /assets/images/wallpaper-04.png
+profile_pic: https://avatars.githubusercontent.com/u/154399305?s=200&v=4
+intro: 'Use the following links to find our work:'
+links:
+- label: Official Website
+  url: https://www.himpfen.com/awesome-travel/
+- label: GitHub
+  url: https://github.com/brandonhimpfen/awesome-travel
 socials:
-  - url: "https://awesomelists.substack.com/"
-    icon: "inbox"
-  - url: "https://twitter.com/listsawesome"
-    icon: "twitter"
-  - url: "https://www.instagram.com/brandonhimpfen/"
-    icon: "instagram"
-  - url: "https://www.facebook.com/awesomelists"
-    icon: "facebook"
-  - url: "https://github.com/awesomelistsio"
-    icon: "github"
----	
-
-{% include buttons.html buttons=page.buttons %}
+  enabled: true
+  intro: 'Connect with us at:'
+  items:
+  - icon: inbox
+    url: https://awesomelists.substack.com/
+    label: Inbox
+  - icon: twitter
+    url: https://twitter.com/listsawesome
+    label: Twitter
+  - icon: instagram
+    url: https://www.instagram.com/brandonhimpfen/
+    label: Instagram
+  - icon: facebook
+    url: https://www.facebook.com/awesomelists
+    label: Facebook
+  - icon: github
+    url: https://github.com/awesomelistsio
+    label: Github
+ui:
+  share_enabled: true
+  verified: false
+---

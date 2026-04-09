@@ -16,7 +16,7 @@ body_class: page-directory
 <div id="directoryGrid" class="row directory-grid">
   {% assign items = site.posts | sort: 'title' %}
   {% for post in items %}
-    {% assign avatar = post['profile-pic'] %}
+    {% assign avatar = post.profile_pic | default: post['profile-pic'] %}
     {% assign intro = post.intro %}
     {% assign slug = post.slug %}
     <div class="col-12 col-md-6 col-lg-4 directory-item" data-title="{{ post.title | downcase }}" data-slug="{{ slug | downcase }}" data-intro="{{ intro | downcase }}">
