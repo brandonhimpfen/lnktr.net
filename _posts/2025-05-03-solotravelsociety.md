@@ -21,5 +21,5 @@ socials:
     label: Facebook
 ui:
   share_enabled: true
-  verified: false
+  verified: true
 ---

@@ -30,5 +30,5 @@ socials:
     label: Github
 ui:
   share_enabled: true
-  verified: false
+  verified: true
 ---
