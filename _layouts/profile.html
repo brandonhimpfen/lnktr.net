@@ -26,8 +26,47 @@ layout: default
   {% assign has_shop = true %}
 {% endif %}
 
-<div class="lnktr-profile-shell"{% if profile_bg %} style="background-image: url('{{ profile_bg | relative_url }}');"{% endif %}>
-  <section class="lnktr-profile-phone">
+{% assign shell_background = 'linear-gradient(180deg, rgba(157, 90, 51, 0.96) 0%, rgba(182, 106, 63, 0.96) 100%)' %}
+{% assign shell_background_type = 'gradient' %}
+{% if page.ui and page.ui.shell_background %}
+  {% assign shell_background = page.ui.shell_background.value | default: shell_background %}
+  {% assign shell_background_type = page.ui.shell_background.type | default: shell_background_type %}
+{% endif %}
+
+{% assign shell_overlay_enabled = false %}
+{% assign shell_overlay_color = 'rgba(255,255,255,0.06)' %}
+{% assign shell_overlay_blur = '0px' %}
+{% if page.ui and page.ui.shell_overlay and page.ui.shell_overlay.enabled %}
+  {% assign shell_overlay_enabled = true %}
+  {% assign shell_overlay_color = page.ui.shell_overlay.color | default: shell_overlay_color %}
+  {% assign shell_overlay_blur = page.ui.shell_overlay.blur | default: shell_overlay_blur %}
+{% endif %}
+
+{% assign card_style = 'light' %}
+{% if page.ui and page.ui.card and page.ui.card.style %}
+  {% assign card_style = page.ui.card.style %}
+{% endif %}
+
+<div class="lnktr-profile-shell"
+  {% if profile_bg %}
+    style="background-image: url('{{ profile_bg | relative_url }}');"
+  {% endif %}>
+  <section
+    class="lnktr-profile-phone{% if card_style == 'dark' %} lnktr-profile-phone-dark{% endif %}"
+    style="
+      {% if shell_background_type == 'image' %}
+        --lnktr-phone-bg: url('{{ shell_background | relative_url }}');
+        --lnktr-phone-bg-size: cover;
+        --lnktr-phone-bg-position: center;
+      {% else %}
+        --lnktr-phone-bg: {{ shell_background }};
+      {% endif %}
+      --lnktr-shell-overlay-color: {{ shell_overlay_color }};
+      --lnktr-shell-overlay-blur: {{ shell_overlay_blur }};
+    ">
+    {% if shell_overlay_enabled %}
+      <div class="lnktr-shell-overlay"></div>
+    {% endif %}
     <div class="lnktr-profile-screen">
       <div class="lnktr-top-actions">
         {% if page.ui.share_enabled != false %}
@@ -47,7 +86,7 @@ layout: default
         <div class="lnktr-affiliate-note d-none" data-shop-note>{{ page.shop.intro }}</div>
       {% endif %}
 
-      <div class="lnktr-content-card">
+      <div class="lnktr-content-card{% if card_style == 'dark' %} lnktr-content-card-dark{% endif %}">
         <div id="linksView">
           {% include profile/links.html links=profile_links has_donations=has_donations %}
         </div>
